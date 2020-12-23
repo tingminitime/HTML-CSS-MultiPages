@@ -1,0 +1,662 @@
+// ------ reset in html link ------
+
+// ------ basic setting ------
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap')
+
+*, *:before, *:after
+    box-sizing: border-box
+    // outline: 1px solid rgba(red, .1)
+
+body
+    font-family: 'Noto Sans TC', sans-serif
+    font-size: 16px
+a
+    text-decoration: none
+    color: #000
+
+.clearfix:after
+    content: ''
+    display: table
+    clear: both
+
+// ------ color ------
+$hexColor: #00cc99
+$hexColorDark: #00644b
+$black: #4a4a4a
+$grey: #9b9b9b
+$facebookColor: #4460a0
+$twitterColor: #00aaec
+
+// ------ Animation ------
+@keyframes axisYani
+    0%, 100%
+        transform: translateY(0px)
+    50%
+        transform: translateY(-2px)
+
+@keyframes axisXani
+    0%, 100%
+        transform: translateX(0px)
+    50%
+        transform: translateX(3px)
+
+// ------ extend style ------
+%contentTitle
+    margin-bottom: 32px
+    > h2
+        display: inline-block
+        vertical-align: bottom
+        font-size: 36px
+        font-weight: 500
+        color: $hexColor
+        letter-spacing: 1px
+    > p
+        display: inline-block
+        vertical-align: bottom
+        font-size: 20px
+        color: #9b9b9b
+        margin-left: 15px
+
+%register_btn
+    padding: 12px 30px
+    font-size: 20px
+    font-weight: 700
+    color: #fff
+    background-color: $hexColor
+    border-radius: 5px
+    border: none
+    cursor: pointer
+    transition: .3s
+    > i
+        margin-left: 20px
+    &:hover
+        background-color: lighten($hexColor, 3)
+        > i
+            animation: axisXani 1s infinite
+    &:focus
+        outline: none
+
+%submit_btn
+    font-size: 20px
+    font-weight: 700
+    color: #fff
+    background: $hexColor
+    border: none
+    border-radius: 5px
+    padding: 10px 40px
+    cursor: pointer
+    &:hover
+        transform: scale(1.05)
+
+// ------ section spacing ------
+.header, .homePage_courses,
+.homePage_comparsion,
+.coursePage_teacher,
+.coursePage_advantage,
+.coursePage_courseOutline,
+.faqPage_commonProblem,
+.faqPage_payment,
+.faqPage_refund
+    margin-bottom: 50px
+
+// ------ content padding ------
+.homePage_courses, .homePage_comparsion
+    padding: 0 40px
+.coursePage_teacher, .coursePage_advantage, .coursePage_courseOutline
+    padding: 0 200px
+.faqPage_commonProblem, .faqPage_payment, .faqPage_refund
+    padding: 0 120px
+
+// ------ content title style ------
+.homePage_comparsion > .comparsionTitle,
+.homePage_courses > .coursesTitle,
+.coursePage_advantage > .advantageTitle,
+.coursePage_courseOutline > .courseOutlineTitle,
+.faqPage_commonProblem > .commonProblemTitle,
+.faqPage_payment > .paymentTitle,
+.faqPage_refund > .refundTitle
+    @extend %contentTitle
+
+// ------ last section style in content ------
+.homePage_contactInfo, .coursePage_startCourse, .faqPage_faqContact
+    background-color: #ebebeb
+    width: 100%
+
+// ------ view width ------
+.wrap
+    width: 1024px
+    margin: 0 auto
+    position: relative
+
+// ------ all topMenu ------
+.topMenu
+    padding: 0 42px
+    background-color: rgba($black, .75)
+    position: fixed
+    width: inherit
+    z-index: 30
+
+.topMenu > h1
+    float: left
+    padding: 20px 0
+    > a
+        display: block
+        width: 174px
+        height: 36px
+        background-image: url(../img/logo_white.png)
+        background-repeat: no-repeat
+        text-indent: 101%
+        white-space: nowrap
+        overflow: hidden
+
+.topMenu > ul
+    float: right
+
+.topMenu > ul > li
+    float: left
+    & + li
+        margin-left: 30px
+    > a
+        display: block
+        padding: 30px 15px
+        font-size: 15px
+        font-weight: 300
+        letter-spacing: 1px
+        text-align: center
+        color: #fff
+        position: relative
+        transition: .3s
+        &:before
+            content: ''
+            position: absolute
+            left: 0
+            bottom: 0
+            width: 100%
+            height: 7px
+            background-color: rgba($hexColor, .2)
+            transition: .3s
+            transform-origin: center
+            transform: scale(0, .5)
+        &:hover
+            color: $hexColor
+            &:before
+                background-color: rgba($hexColor, 1)
+                transform: scale(1, 1)
+
+// ------ all header ------
+.header
+    line-height: 560px
+    position: relative
+    > h2.bannerText
+        display: inline-block
+        font-size: 48px
+        font-weight: 500
+        letter-spacing: 1px
+        vertical-align: middle
+        > button
+            display: block
+            margin-top: 50px
+            @extend %register_btn
+
+.header.homePage
+    background: url(../img/index_banner.jpg) no-repeat left center
+.header.coursePage
+    background: url(../img/course_banner.jpg) no-repeat left center
+.header.faqPage
+    background: url(../img/faq_banner.jpg) no-repeat left center
+
+// ------ INDEX.html header ------
+.header.homePage > h2.bannerText
+    color: $hexColor
+    line-height: 1.75
+    padding: 30px 40px
+    > span
+        color: #fff
+
+// ------ COURSE.html header ------
+.header.coursePage > h2.bannerText
+    color: #fff
+    line-height: 1.5
+    padding: 30px 40px
+    > p
+        font-size: 24px
+        color: $hexColor
+
+.header.coursePage > .headerImg
+    position: absolute
+    display: inline-block
+    vertical-align: middle
+    line-height: 1
+    top: 120px
+    right: 60px
+    > img
+        margin-left: 30px
+
+// ------ FAQ.html header ------
+.header.faqPage > h2.bannerText
+    color: #fff
+    width: 100%
+    line-height: 1.5
+    padding-bottom: 120px
+    text-align: center
+    > p
+        font-size: 24px
+        color: $hexColor
+
+.header.faqPage > .searchBar
+    width: 100%
+    position: absolute
+    font-size: 0
+    line-height: 1
+    top: 65%
+    left: 50%
+    text-align: center
+    transform: translate(-50%, -50%)
+    > input, > button
+        background-color: rgba(#fff, .9)
+        transition: .2s
+    > input
+        display: inline-block
+        width: 570px
+        font-size: 24px
+        font-weight: 500
+        line-height: 1
+        color: $black
+        border: none
+        border-radius: 5px 0 0 5px
+        padding: 11px 20px
+        &:focus
+            outline: none
+        &::placeholder
+            font-weight: 700
+            color: $grey
+        &::-webkit-search-cancel-button
+            appearance: none
+    > button
+        display: inline-block
+        font-size: 23px
+        line-height: 1
+        color: $black
+        border: none
+        padding: 13px
+        border-radius: 0 5px 5px 0
+        cursor: pointer
+
+// ------ INDEX.html homePage_courses ------   
+.homePage_courses > .coursesTitle > a
+    float: right
+    padding: 10px 15px
+    color: $hexColor
+    font-weight: 500
+    letter-spacing: 1px
+    border: 2px solid $hexColor
+    border-radius: 5px
+    position: relative
+    transition: .3s
+    &:before, &:after
+        display: block
+        position: absolute
+    &:before
+        content: '優惠中'
+        color: $black
+        text-align: center
+        font-size: 15px
+        right: -32px
+        top: -32px
+        padding: 5px 10px
+        border-radius: 5px
+        background-color: #ffe05d
+    &:after
+        content: ''
+        right: 8px
+        top: -7px
+        border-left: 10px solid transparent
+        border-right: 10px solid transparent
+        border-top: 10px solid #ffe05d
+    &:hover
+        background-color: $hexColor
+        color: #fff
+        &:before, &:after
+            animation: axisYani .5s infinite
+
+.homePage_courses > ul > li
+    float: left
+    position: relative
+    width: 31.33%
+    border-radius: 10px
+    box-shadow: 1px 5px 5px #ddd
+    transition: .3s
+    overflow: hidden
+    & + li
+        margin-left: 3%
+    &:before
+        content: ''
+        position: absolute
+        left: 50%
+        bottom: 20%
+        width: 50px
+        height: 50px
+        border-radius: 50%
+        background-color: rgba($hexColor, 0)
+        transform: translate(-50%, 20%)
+        transition: .4s
+    &:hover
+        transform: translate(-3px, -5px)
+        box-shadow: 2px 6px 10px #ddd
+        h3, p
+            color: #fff
+        p
+            font-weight: 500
+        &:before
+            width: 800px
+            height: 800px
+            background-color: rgba($hexColor, 1)
+        
+    > a
+        display: block
+        position: relative
+        h3
+            font-size: 20px
+            font-weight: 700
+            letter-spacing: 1px
+            color: $black
+            text-align: center
+            padding: 10px 0
+        .coursesImg
+            line-height: 150px
+            padding: 15px 0
+            text-align: center
+            img
+                vertical-align: middle
+        p
+            color: $grey
+            font-weight: 500
+            letter-spacing: 1px
+            line-height: 1.5
+            text-align: justify
+            padding: 20px 10px
+
+// ------ INDEX.html homePage_comparsion ------
+.homePage_comparsion > table
+    width: 100%
+    font-size: 16px
+    font-weight: 500
+    letter-spacing: 1px
+    color: #333
+    > thead
+        background-color: #eee
+    td + td
+        text-align: center
+    th, td
+        padding: 20px 50px
+        border-top: 1px solid #ddd
+        border-bottom: 1px solid #ddd
+        position: relative
+        z-index: 1
+    th:first-of-type, td:first-of-type
+        text-align-last: left
+        padding-left: 50px
+    th:last-of-type, td:last-of-type
+        padding-right: 50px
+    .highlight
+        color: $hexColor
+    .recommend:before
+        content: ''
+        position: absolute
+        background: url(../img/good.png) center / cover
+        width: 28px
+        height: 28px
+        z-index: -1
+        top: 0
+        left: 10%
+        transform: rotate(-30deg)
+
+// ------ INDEX.html homePage_contactInfo ------
+.homePage_contactInfo
+    padding: 110px 40px 70px 40px
+
+.homePage_contactInfo > h3
+    float: left
+    font-size: 30px
+    font-weight: 700
+    letter-spacing: 2px
+    text-align: center
+    color: $black
+    line-height: 2
+
+.homePage_contactInfo > form
+    float: right
+    width: 47%
+    > .inputInfo
+        input:not([type="submit"])
+            float: left
+            width: 100%
+            padding: 15px
+            margin-bottom: 20px
+            font-size: 20px
+            font-weight: 700
+            color: $black
+            border: none
+            outline: none
+            border-radius: 5px
+        input[type="submit"]
+            float: right
+            margin-top: 30px
+            @extend %submit_btn
+        input
+            box-shadow: 3px 5px 5px rgba($black, .2)
+            transition: .2s
+            &:hover
+                transform: translate(-1px, -2px)
+                box-shadow: 4px 6px 10px rgba($black, .1)
+        input::placeholder
+            color: #ccc
+
+// ------ COURSE.html coursePage_teacher introduce -----
+.coursePage_teacher > .avatar
+    display: inline-block
+    border-radius: 50%
+    overflow: hidden
+    vertical-align: middle
+.coursePage_teacher > .intro
+    display: inline-block
+    vertical-align: middle
+    > h3
+        display: inline-block
+        vertical-align: top
+        font-size: 36px
+        font-weight: 500
+        line-height: 1.5
+        margin: 0 36px
+        > span
+            color: $hexColor
+    > ul
+        display: inline-block
+        vertical-align: top
+        > li
+            color: $grey
+            font-weight: 500
+            line-height: 1.5
+            &:before
+                content: '‧'
+                margin-right: 1em
+
+// ------ COURSE.html coursePage_advantage -----
+.coursePage_advantage > ol
+    list-style-type: decimal
+    padding-left: 1em
+    > li
+        padding-left: 10px
+        color: $black
+        font-weight: 500
+        line-height: 2
+        letter-spacing: 1px
+
+// ------ COURSE.html coursePage_courseOutline -----
+.coursePage_courseOutline > ul
+    > li:nth-child(odd)
+        background-color: #ebebeb
+        a
+            color: $black
+    > li:nth-child(even)
+        a
+            color: $grey
+    > li
+        font-weight: 500
+        transition: .2s
+        a
+            display: block
+            padding: 17px 35px
+            width: 100%
+            height: 100%
+            letter-spacing: 1px
+        &:hover
+            background-color: rgba($hexColor, .75)
+            outline: 1px solid $grey
+            a
+                color: #fff
+
+// ------ COURSE.html coursePage_startCourse -----
+.coursePage_startCourse
+    text-align: center
+    padding: 140px 200px 140px 200px
+    > h3
+        display: inline-block
+        font-size: 30px
+        font-weight: 700
+        letter-spacing: 2px
+        color: $black
+        line-height: 2
+        text-align: left
+        margin-right: 60px
+    > button
+        @extend %register_btn
+
+// ------ FAQ.html content -----
+.faqPage_commonProblem > ul > li,
+.faqPage_payment > ul > li,
+.faqPage_refund > ul > li
+    line-height: 1.5
+    margin-bottom: 24px
+    > h4
+        color: $black
+        font-size: 20px
+        font-weight: 500
+        letter-spacing: 1px
+    > p
+        color: $grey
+        > span
+            display: inline-block
+            color: $black
+            font-weight: 500
+            margin-top: 1em
+    > ol
+        list-style: decimal
+        margin-left: 3em
+        > li
+            padding-left: 10px
+            color: $grey
+    > ul
+        margin-left: 3em
+        > li
+            color: $grey
+            &:before
+                content: '‧'
+                margin-left: -1em
+
+.faqPage_commonProblem,
+.faqPage_payment,
+.faqPage_refund
+    > ul > li a
+        color: $hexColor
+        font-weight: 500
+        &:hover
+            color: lighten($hexColor, 5)
+
+// ------ FAQ.html faqPage_faqContact -----
+.faqPage_faqContact
+    padding: 110px 40px 70px 40px
+    > h3
+        float: left
+        font-size: 30px
+        font-weight: 700
+        letter-spacing: 2px
+        color: $black
+        line-height: 2
+    > form
+        float: right
+        width: 47%
+        > .inputInfo
+            input:not([type="submit"])
+                float: left
+                width: 100%
+                padding: 15px
+                margin-bottom: 20px
+                font-size: 20px
+                font-weight: 700
+                color: $black
+                border: none
+                outline: none
+                border-radius: 5px
+            input[type="submit"]
+                float: right
+                margin-top: 30px
+                @extend %submit_btn
+            textarea
+                float: left
+                width: 100%
+                padding: 10px
+                font-size: 20px
+                font-weight: 700
+                color: $black
+                border: none
+                resize: none
+                border-radius: 10px
+                &:focus
+                    outline: none
+            input, textarea
+                box-shadow: 3px 5px 5px rgba($black, .2)
+                transition: .2s
+                &:hover
+                    transform: translate(-1px, -2px)
+                    box-shadow: 4px 6px 10px rgba($black, .1)
+            input::placeholder, textarea::placeholder
+                color: #ccc
+
+// ------ all footer ------
+.footer
+    background-color: #323228
+    padding: 40px 42px
+.footer > .footerLogo
+    display: inline-block
+    > a
+        float: left
+        display: block
+        > h2
+            text-indent: 101%
+            white-space: nowrap
+            overflow: hidden
+            display: inline-block
+            width: 0
+        > img
+            display: inline-block
+            vertical-align: middle
+    > p
+        color: $grey
+        text-align: right
+        line-height: 1.5
+
+.footer > ul
+    float: right
+    padding: 14px 0
+    > li
+        float: left
+        margin-left: 22px
+        transition: .3s
+        a
+            display: inline-block
+            vertical-align: super
+        img
+            vertical-align: middle
+        &:hover
+            animation: axisYani .5s infinite
