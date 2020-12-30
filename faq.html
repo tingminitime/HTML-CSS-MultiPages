@@ -14,7 +14,6 @@
     <meta property="og:local" content="zh_TW">
     <meta property="og:url" content="https://tingminitime.github.io/HTML-CSS-FinalProject/">
     <link rel="icon" href="img/favicon.ico">
-    <link rel="stylesheet" href="style/reset.css"/>
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css'/>
     <link rel="stylesheet" href="style/all.css"/>
 </head>
@@ -28,7 +27,7 @@
                 <li><a href="faq.html">問答</a></li>
             </ul>
         </div>
-        <div class="header faqPage">
+        <div class="header faqPage mb-50">
             <h2 class="bannerText">
                 遇到問題了嗎？
                 <p>別擔心，你想找的答案都在這裡！</p>
@@ -39,7 +38,7 @@
             </div>
         </div>
         <div class="content">
-            <div class="faqPage_commonProblem">
+            <div class="faqPage_commonProblem mb-50">
                 <div class="commonProblemTitle">
                     <h2>常見問題 #</h2>
                     <p>你想問的說不定也在這裡</p>
@@ -59,7 +58,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="faqPage_payment">
+            <div class="faqPage_payment mb-50">
                 <div class="paymentTitle">
                     <h2>怎麼付款 #</h2>
                     <p>付款方式保證最多元</p>
@@ -86,7 +85,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="faqPage_refund">
+            <div class="faqPage_refund mb-50">
                 <div class="refundTitle">
                     <h2>我想退款 #</h2>
                     <p>期待你再次成為我們的學生</p>
@@ -124,13 +123,11 @@
             </div>
             <div class="faqPage_faqContact clearfix">
                 <h3>找不到你的問題嗎？<br>直接寄信給我們解決吧！</h3>
-                <form action="faq.html">
-                    <div class="inputInfo clearfix">
-                        <input id="inputName" type="text" name="Name" placeholder="您的姓名">
-                        <input id="inputMail" type="text" name="Mail" placeholder="example@mail.com.tw">
-                        <textarea name="question" rows="8" placeholder="你遇到什麼困難呢？"></textarea>
-                        <input type="submit" value="送　出">
-                    </div>
+                <form class="inputInfo clearfix" action="faq.html">
+                    <input id="inputName" type="text" name="Name" placeholder="您的姓名">
+                    <input id="inputMail" type="text" name="Mail" placeholder="example@mail.com.tw">
+                    <textarea name="question" rows="8" placeholder="你遇到什麼困難呢？"></textarea>
+                    <input type="submit" value="送　出">
                 </form>
             </div>
         </div>
