@@ -417,32 +417,31 @@ $twitterColor: #00aaec
     color: $black
     line-height: 2
 
-.homePage_contactInfo > form
+.homePage_contactInfo > .inputInfo
     float: right
     width: 47%
-    > .inputInfo
-        input:not([type="submit"])
-            width: 100%
-            padding: 15px
-            margin-bottom: 20px
-            font-size: 20px
-            font-weight: 700
-            color: $black
-            border: none
-            outline: none
-            border-radius: 5px
-        input[type="submit"]
-            float: right
-            margin-top: 30px
-            @extend %submit_btn
-        input
-            box-shadow: 3px 5px 5px rgba($black, .2)
-            transition: .2s
-            &:hover
-                transform: translate(-1px, -2px)
-                box-shadow: 4px 6px 10px rgba($black, .1)
-        input::placeholder
-            color: #ccc
+    input:not([type="submit"])
+        width: 100%
+        padding: 15px
+        margin-bottom: 20px
+        font-size: 20px
+        font-weight: 700
+        color: $black
+        border: none
+        outline: none
+        border-radius: 5px
+    input[type="submit"]
+        float: right
+        margin-top: 30px
+        @extend %submit_btn
+    input
+        box-shadow: 3px 5px 5px rgba($black, .2)
+        transition: .2s
+        &:hover
+            transform: translate(-1px, -2px)
+            box-shadow: 4px 6px 10px rgba($black, .1)
+    input::placeholder
+        color: #ccc
 
 // ------ COURSE.html coursePage_teacher introduce -----
 .coursePage_teacher > .avatar
@@ -542,19 +541,20 @@ $twitterColor: #00aaec
             color: $black
             font-weight: 500
             margin-top: 1em
-    > ol
-        list-style: decimal
-        margin-left: 3em
-        > li
-            padding-left: 10px
-            color: $grey
-    > ul
-        margin-left: 3em
-        > li
-            color: $grey
-            &:before
-                content: '‧'
-                margin-left: -1em
+
+.faqPage_paragraph_ulStyle
+    margin-left: 3em
+    li
+        color: $grey
+        &:before
+            content: '‧'
+            margin-left: -1em
+.faqPage_paragraph_olStyle
+    list-style: decimal
+    margin-left: 3em
+    li
+        padding-left: 10px
+        color: $grey
 
 .faqPage_commonProblem,
 .faqPage_payment,

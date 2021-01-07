@@ -166,7 +166,7 @@ a {
   outline: none;
 }
 
-.homePage_contactInfo > form > .inputInfo input[type="submit"], .faqPage_faqContact > .inputInfo > input[type="submit"] {
+.homePage_contactInfo > .inputInfo input[type="submit"], .faqPage_faqContact > .inputInfo > input[type="submit"] {
   font-size: 20px;
   font-weight: 700;
   color: #fff;
@@ -177,7 +177,7 @@ a {
   cursor: pointer;
 }
 
-.homePage_contactInfo > form > .inputInfo input:hover[type="submit"], .faqPage_faqContact > .inputInfo > input:hover[type="submit"] {
+.homePage_contactInfo > .inputInfo input:hover[type="submit"], .faqPage_faqContact > .inputInfo > input:hover[type="submit"] {
   -webkit-transform: scale(1.05);
           transform: scale(1.05);
 }
@@ -628,12 +628,12 @@ a {
   line-height: 2;
 }
 
-.homePage_contactInfo > form {
+.homePage_contactInfo > .inputInfo {
   float: right;
   width: 47%;
 }
 
-.homePage_contactInfo > form > .inputInfo input:not([type="submit"]) {
+.homePage_contactInfo > .inputInfo input:not([type="submit"]) {
   width: 100%;
   padding: 15px;
   margin-bottom: 20px;
@@ -645,38 +645,38 @@ a {
   border-radius: 5px;
 }
 
-.homePage_contactInfo > form > .inputInfo input[type="submit"] {
+.homePage_contactInfo > .inputInfo input[type="submit"] {
   float: right;
   margin-top: 30px;
 }
 
-.homePage_contactInfo > form > .inputInfo input {
+.homePage_contactInfo > .inputInfo input {
   -webkit-box-shadow: 3px 5px 5px rgba(74, 74, 74, 0.2);
           box-shadow: 3px 5px 5px rgba(74, 74, 74, 0.2);
   -webkit-transition: .2s;
   transition: .2s;
 }
 
-.homePage_contactInfo > form > .inputInfo input:hover {
+.homePage_contactInfo > .inputInfo input:hover {
   -webkit-transform: translate(-1px, -2px);
           transform: translate(-1px, -2px);
   -webkit-box-shadow: 4px 6px 10px rgba(74, 74, 74, 0.1);
           box-shadow: 4px 6px 10px rgba(74, 74, 74, 0.1);
 }
 
-.homePage_contactInfo > form > .inputInfo input::-webkit-input-placeholder {
+.homePage_contactInfo > .inputInfo input::-webkit-input-placeholder {
   color: #ccc;
 }
 
-.homePage_contactInfo > form > .inputInfo input:-ms-input-placeholder {
+.homePage_contactInfo > .inputInfo input:-ms-input-placeholder {
   color: #ccc;
 }
 
-.homePage_contactInfo > form > .inputInfo input::-ms-input-placeholder {
+.homePage_contactInfo > .inputInfo input::-ms-input-placeholder {
   color: #ccc;
 }
 
-.homePage_contactInfo > form > .inputInfo input::placeholder {
+.homePage_contactInfo > .inputInfo input::placeholder {
   color: #ccc;
 }
 
@@ -816,37 +816,27 @@ a {
   margin-top: 1em;
 }
 
-.faqPage_commonProblem > ul > li > ol,
-.faqPage_payment > ul > li > ol,
-.faqPage_refund > ul > li > ol {
+.faqPage_paragraph_ulStyle {
+  margin-left: 3em;
+}
+
+.faqPage_paragraph_ulStyle li {
+  color: #9b9b9b;
+}
+
+.faqPage_paragraph_ulStyle li:before {
+  content: '‧';
+  margin-left: -1em;
+}
+
+.faqPage_paragraph_olStyle {
   list-style: decimal;
   margin-left: 3em;
 }
 
-.faqPage_commonProblem > ul > li > ol > li,
-.faqPage_payment > ul > li > ol > li,
-.faqPage_refund > ul > li > ol > li {
+.faqPage_paragraph_olStyle li {
   padding-left: 10px;
   color: #9b9b9b;
-}
-
-.faqPage_commonProblem > ul > li > ul,
-.faqPage_payment > ul > li > ul,
-.faqPage_refund > ul > li > ul {
-  margin-left: 3em;
-}
-
-.faqPage_commonProblem > ul > li > ul > li,
-.faqPage_payment > ul > li > ul > li,
-.faqPage_refund > ul > li > ul > li {
-  color: #9b9b9b;
-}
-
-.faqPage_commonProblem > ul > li > ul > li:before,
-.faqPage_payment > ul > li > ul > li:before,
-.faqPage_refund > ul > li > ul > li:before {
-  content: '‧';
-  margin-left: -1em;
 }
 
 .faqPage_commonProblem > ul > li a,
